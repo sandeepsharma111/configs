@@ -6,6 +6,12 @@ eureka:
     registerWithEureka: true
     serviceUrl:
       defaultZone: ${EDUCATION_EUREKA_SERVER:http://localhost:1337/eureka/}
-spring.cloud.config:
-  uri: http://localhost:8888
-  label: local
+spring:
+  data:
+    mongodb:
+      uri: mongodb://sandeep:mydb360@cluster0-shard-00-02-vccxp.mongodb.net:27017/test?ssl=true&replicaSet=Cluster0-shard-0&authSource=admin&retryWrites=true&w=majority
+      database: micro-db
+cloud:
+  loadbalancer:
+    ribbon:
+      enabled: false
