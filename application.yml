@@ -1,1 +1,11 @@
 developer: Sandeep Sharma
+
+eureka:
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+    serviceUrl:
+      defaultZone: ${EDUCATION_EUREKA_SERVER:http://localhost:1337/eureka/}
+spring.cloud.config:
+  uri: http://localhost:8888
+  label: local
